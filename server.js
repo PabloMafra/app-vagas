@@ -1,3 +1,6 @@
+// import { initializeApp } from "firebase/app";
+// import { getDatabase, ref, set, onValue } from "firebase/database";
+
 // const firebaseConfig = {
 //     apiKey: "AIzaSyDfSQex_8VL8GvNZnMchygRqhE0Zki9up8",
 //     authDomain: "vagas-garagem-bd78f.firebaseapp.com",
@@ -12,7 +15,8 @@
 
 // const database = getDatabase();
 
-// const path = 'usuarios/usuario3';
+// const path = 'usuarios/usuario4';
+
 
 // set(ref(database, path), {
 //   nome: 'João mourinho',
@@ -26,6 +30,7 @@
 // }).catch((error) => {
 //   console.error('Erro ao salvar dados: ', error);
 // });
+
 
 // onValue(ref(database, path), async (snapshot) => {
 //   const data = await snapshot.val();
@@ -89,49 +94,96 @@
 //       });
 // });
 
-import { initializeApp } from "firebase/app";
-import { getDatabase, ref, set, onValue } from "firebase/database";
 
-const firebaseConfig = {
 
-  apiKey: "AIzaSyDfSQex_8VL8GvNZnMchygRqhE0Zki9up8",
-  authDomain: "vagas-garagem-bd78f.firebaseapp.com",
-  projectId: "vagas-garagem-bd78f",
-  storageBucket: "vagas-garagem-bd78f.appspot.com",
-  messagingSenderId: "255602450180",
-  appId: "1:255602450180:web:096456bb32b9df37137a51",
-  measurementId: "G-KCN7NX1Y8V"
-};
 
-const app = initializeApp(firebaseConfig);
 
-const database = getDatabase();
-const path = 'usuarios/usuario8';
 
-let name 
-let placa 
-let hour 
 
-function agendar() {
-  name = document.getElementById("name").value;
-  placa = document.getElementById("placa").value;
-  hour = document.getElementById("hour").value;
+
+// import { initializeApp } from "firebase/app";
+// import { getDatabase, ref, set, onValue, firebaseRef } from "firebase/database";
+
+// const firebaseConfig = {
+
+//   apiKey: "AIzaSyDfSQex_8VL8GvNZnMchygRqhE0Zki9up8",
+//   authDomain: "vagas-garagem-bd78f.firebaseapp.com",
+//   projectId: "vagas-garagem-bd78f",
+//   storageBucket: "vagas-garagem-bd78f.appspot.com",
+//   messagingSenderId: "255602450180",
+//   appId: "1:255602450180:web:096456bb32b9df37137a51",
+//   measurementId: "G-KCN7NX1Y8V"
+// };
+
+// const app = initializeApp(firebaseConfig);
+
+// const database = getDatabase();
+// const path = 'usuarios/usuario8';
+
+// let name 
+// let placa 
+// let hour 
+
+// function agendar() {
+//   name = document.getElementById("name").value;
+//   placa = document.getElementById("placa").value;
+//   hour = document.getElementById("hour").value;
  
 
   
-  set(ref(database, path), {
-      name: name,
-      placa: placa,
-      hour: hour
-    }).then(() => {
-      console.log("Agendamento salvo com sucesso");
-    })
-    .catch((error) => {
-      console.error("Erro ao salvar agendamento:", error);
-    });
-}
+//   set(ref(database, path), {
+//       name: name,
+//       placa: placa,
+//       hour: hour
+//     }).then(() => {
+//       console.log("Agendamento salvo com sucesso");
+//     })
+//     .catch((error) => {
+//       console.error("Erro ao salvar agendamento:", error);
+//     });
+// }
 
 // document.getElementById("agendar").addEventListener("click", function(event) {
 //   event.preventDefault(); // impede que a página seja recarregada
 //   agendar();
 // });
+
+
+
+
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDfSQex_8VL8GvNZnMchygRqhE0Zki9up8",
+    authDomain: "vagas-garagem-bd78f.firebaseapp.com",
+    databaseURL: "https://vagas-garagem-bd78f-default-rtdb.firebaseio.com",
+    projectId: "vagas-garagem-bd78f",
+    storageBucket: "vagas-garagem-bd78f.appspot.com",
+    messagingSenderId: "255602450180",
+    appId: "1:255602450180:web:096456bb32b9df37137a51",
+    measurementId: "G-KCN7NX1Y8V"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  var firebaseRef = firebase.database().ref('usuarios/vaga');
+  document.querySelector('#agendar').addEventListener('click', ()=>{
+    const name = document.getElementById('name').value;
+    const placa = document.getElementById('placa').value;
+    const hour = document.getElementById('hour').value;
+
+    const usuarios = {
+      name: name,
+      placa: placa,
+      hour: hour
+    }
+
+    firebaseRef.push(usuarios).then(()=>{
+      console.log('Dados gravados com sucesso!');
+      // location.reload();
+    }).catch((error)=>{
+      console.error('Erro ao gravar dados: ', error);
+    });
+  });
+
+
+
+

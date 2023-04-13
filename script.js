@@ -1,66 +1,112 @@
-//a variável botao recebe um evento do id dado no html
-// const botao = document.getElementById("agendar"); 
-// //a variavel funcionarios recebe um array vazio que irá ser preenchido depois
-// const funcionarios = [];
+// const vagas = document.querySelector('.vagas');
+// const vagasContainer = document.querySelector('.vagas-container');
+// let isDown = false;
+// let startX;
+// let scrollLeft;
 
-// botao.addEventListener("click", function(){
-//   const nome = document.getElementById("name").value
-//   const placa = document.getElementById("placa").value
-//   const horario = document.getElementById("hour").value
-
-//   const funcionario = {
-//     nome: nome,
-//     placa: placa,
-//     horario: horario
-//   };
-
-//   if(nome.length <= 0 || placa.length <= 0 || horario.length <= 0){
-//     alert("Preencha todos os campos.")
-//   }else{
-//     if(funcionarios.length == 10){
-//         alert("Limite de vagas atingido.")
-//       }else{
-//           funcionarios.push(funcionario)
-//       }
-//   }
-  
-// })
-
-// import { initializeApp } from "../firebase/app";
-// import { getDatabase, ref, set } from "../firebase/database";
-
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDfSQex_8VL8GvNZnMchygRqhE0Zki9up8",
-//   authDomain: "vagas-garagem-bd78f.firebaseapp.com",
-//   projectId: "vagas-garagem-bd78f",
-//   storageBucket: "vagas-garagem-bd78f.appspot.com",
-//   messagingSenderId: "255602450180",
-//   appId: "1:255602450180:web:096456bb32b9df37137a51",
-//   measurementId: "G-KCN7NX1Y8V"
-// };
-
-// const app = initializeApp(firebaseConfig);
-
-// const database = getDatabase();
-
-// const path = 'usuarios/usuario3';
-
-// document.getElementById("agendar").addEventListener("click", function() {
-//     set(ref(database, path), {
-//         nome: document.getElementById("name").value,
-//         placa: document.getElementById("placa").value,
-//         horario: document.getElementById("hour").value
-//     }).then(() => {
-//         console.log('Dados salvos com sucesso!');
-//     }).catch((error) => {
-//         console.error('Erro ao salvar dados: ', error);
-//     });
+// vagas.addEventListener('mousedown', e => {
+//   isDown = true;
+//   startX = e.pageX - vagas.offsetLeft;
+//   scrollLeft = vagas.scrollLeft;
 // });
 
-  
-  
-        
-          
-      
-  
+// vagas.addEventListener('touchstart', e => {
+//   isDown = true;
+//   startX = e.touches[0].pageX - vagas.offsetLeft;
+//   scrollLeft = vagas.scrollLeft;
+// });
+
+// vagas.addEventListener('mouseleave', () => {
+//   isDown = false;
+// });
+
+// vagas.addEventListener('mouseup', () => {
+//   isDown = false;
+// });
+
+// vagas.addEventListener('touchend', () => {
+//   isDown = false;
+// });
+
+// vagas.addEventListener('mousemove', e => {
+//   if (!isDown) return;
+//   e.preventDefault();
+//   const x = e.pageX - vagas.offsetLeft;
+//   const walk = (x - startX) * 3; // Multiplicando por 3 para aumentar a sensibilidade do movimento
+//   vagas.scrollLeft = scrollLeft - walk;
+// });
+
+// vagas.addEventListener('touchmove', e => {
+//   if (!isDown) return;
+//   e.preventDefault();
+//   const x = e.touches[0].pageX - vagas.offsetLeft;
+//   const walk = (x - startX) * 3;
+//   vagas.scrollLeft = scrollLeft - walk;
+// });
+
+const red = document.getElementById('red');
+const blue = document.getElementById('blue');
+const yellow = document.getElementById('yellow');
+const green = document.getElementById('green');
+const orange = document.getElementById('orange');
+const white = document.getElementById('white');
+
+
+function chooseRed(){
+    red.style.display = "block"
+    yellow.style.display = "none";
+    blue.style.display = "none";
+    green.style.display = "none";
+    orange.style.display = "none";
+    white.style.display = "none";
+}
+
+function chooseBlue(){
+    red.style.display = "none"
+    yellow.style.display = "none";
+    blue.style.display = "block";
+    green.style.display = "none";
+    orange.style.display = "none";
+    white.style.display = "none";
+}
+
+function chooseYellow(){
+    red.style.display = "none"
+    yellow.style.display = "block";
+    blue.style.display = "none";
+    green.style.display = "none";
+    orange.style.display = "none";
+    white.style.display = "none";
+}
+
+function chooseGreen(){
+    red.style.display = "none"
+    yellow.style.display = "none";
+    blue.style.display = "none";
+    green.style.display = "block";
+    orange.style.display = "none";
+    white.style.display = "none";
+}
+
+function chooseOrange(){
+    red.style.display = "none"
+    yellow.style.display = "none";
+    blue.style.display = "none";
+    green.style.display = "none";
+    orange.style.display = "block";
+    white.style.display = "none";
+}
+
+function chooseWhite(){
+    red.style.display = "none"
+    yellow.style.display = "none";
+    blue.style.display = "none";
+    green.style.display = "none";
+    orange.style.display = "none";
+    white.style.display = "block";
+    white.style.transition = "2"
+}
+
+
+
 

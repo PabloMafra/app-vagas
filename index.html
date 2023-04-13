@@ -1,41 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estacionamento</title>
+    <title>Estacionamento It One</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="imgs/favicon.png" sizes="32x32">
-    <script src="https://kit.fontawesome.com/eec0e0d660.js" crossorigin="anonymous"></script>
 </head>
+<header><img src="imgs/background2.png" alt=""></header>
 <body>
     
-    <h1><a href="https://itone.com.br"><img src="imgs/logo.png" width="100" height="50"></a></img></h1>
-    <hr class="hr-title">
-<main>
-    
-    <h2>Não fique sem vagas, reserve e confirme a sua!</h2>
-    <nav>
-        <ul class="menu-nav">
-            <li>
-                <button onClick="window.location.href = './agendamento/'"><span class="btn-stats">Reservar</span></button> 
-            </li>
-    </nav>
-    <div class="first-box">
-    <br>
-    <img src="imgs/estacionamento.png" width="200px" height="120px"><span class="intern-text">Com nosso novo sistema você se planeja melhor e pode agendar sua vaga com até 2 horas de antecedencia.</span></img>
-    
-        
-    </div>
+    <div class="car1"><img id="logo" src="imgs/logo.png">
+        <h1>Onde você deseja estacionar?</h1>
 
-    <div class="second-box">
-        <br>
-        <img src="imgs/estacionamento.png" width="200px" height="120px"></img>
+        <div class="vagas">
         
-            <p></p>
-    </div>
-</main>
-<script type="text/javascript" src="script.js"></script>
+        <button class="vagas-espec">Vaga 1 </button>&nbsp;
+        <button class="vagas-espec">Vaga 2 </button>&nbsp;
+        <button class="vagas-espec">Vaga 3 </button>&nbsp;
+        <button class="vagas-espec">Vaga 4 </button>&nbsp;
+        <button class="vagas-espec">Vaga 5 </button>&nbsp;
+        <br>
+        <br>
+        <button class="vagas-espec">Vaga 6 </button>&nbsp;
+        <button class="vagas-espec">Vaga 7 </button>&nbsp;
+        <button class="vagas-espec">Vaga 8 </button>&nbsp;
+        <button class="vagas-espec">Vaga 9 </button>&nbsp;
+        <button class="vagas-espec">Vaga 10 </button>&nbsp;
+        </div>
+   
+        <img class="imagens" id="red" src="imgs/cars/red.png" width="360" height="260" style="display:block;" alt="">
+        <img  id="orange" class="imagens" src="imgs/cars/orange.png" width="360" height="260" style="display:none;" alt="">
+        <img   id="white" class="imagens" src="imgs/cars/white.png" width="360" height="260" style="display:none;" alt="">
+        <img  id="blue" class="imagens" src="imgs/cars/blue.png" width="360" height="260" style="display:none;" alt="">
+        <img   id="green" class="imagens" src="imgs/cars/green.png" width="360" height="260" style="display:none;" alt="">
+        <img   id="yellow" class="imagens" src="imgs/cars/yellow.png" width="360" height="260" style="display:none;" alt="">
+
+
+        <div class="button-cars">
+        <button onclick="chooseRed()" id="button-red">x</button>
+        <button onclick="chooseOrange()"  id="button-orange">x</button>
+        <button onclick="chooseWhite()"  id="button-white">x</button>
+        <button onclick="chooseBlue()"  id="button-blue">x</button>
+        <button onclick="chooseGreen()"  id="button-green">x</button>
+        <button onclick="chooseYellow()" id="button-yellow">x</button>
+
+        </div>
+
+    <button onClick="window.location.href = './agendamento/'" class="cssbuttons-io-button"> Próximo
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
+        </div>
+      </button></div>
+
+    
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

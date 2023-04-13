@@ -24,38 +24,30 @@
     <!-- Firebase App (o núcleo do Firebase) é sempre necessário e deve ser listado primeiro -->
 <!-- Adicione esses scripts no seu arquivo HTML -->
 <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-database.js"></script>
 
 </head>
-<header><h1><a href="../"><img src="../imgs/logo.png" width="75" height="35"></a></img></h1>
-        <input type="checkbox" id="checkbox">
-        <label for="checkbox" class="toggle">
-          <div class="bars" id="bar1"></div>
-          <div class="bars" id="bar2"></div>
-          <div class="bars" id="bar3"></div>
-        </label>
+<header><h1 class="logo"><a href="../"><img src="../imgs/logo.png" width="75" height="35"></a></img></h1>
       
 </header>
 <body>
+    
     <hr class="hr-title">
-    <div class="divisao"><i class="fa-solid fa-warehouse fa-2xl"></i></div>
-    <!-- <nav>
-        <ul class="menu-nav">
-            <li>
-                <button><p class="btn-stats">Disponível</p></button> 
-            </li>
-
-            <li>
-                <button><p class="btn-stats">Ocupadas</p></button>  
-            </li>
-
-            <li>
-                <button><p class="btn-stats">Reservadas</p></button>
-            </li>
-        </ul>
-    </nav> -->
+    
     <div class="container">
-    <div action="index.html" method="POST" class="input-form">
+       
+        <div id="ok" class="ok" style="display:none;"><i class="fa-regular fa-circle-check fa-2xl"></i><br>
+            <h1 class="message">Vaga cadastrada com sucesso!</h1>
+            <button onclick="fecharPop()" class="cssbuttons-io-button" id="fechar"> Fechar
+                <div class="icon">
+                  x
+                </div>
+              </button>
+        </div>
+        
+    <div class="divisao"><i class="fa-solid fa-warehouse fa-2xl"></i></div>
+
+    <div action="index.html" method="POST" id="form" class="input-form">
         
         <label class="label-icon"><i class="fa-solid fa-user"></i>
             <input type="text" name="name" id="name" autocomplete="off" placeholder="Digite seu nome"></label>
@@ -78,7 +70,7 @@
             <br>
 
 <div class="center">      
-<button onclick="agendar()" type="submit" class="button" id="agendar">
+<button onclick="reservarVaga();" type="submit" class="button" id="agendar">
     <span class="button__text">Reservar</span>
     <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
   </button>
@@ -87,7 +79,7 @@
 </div>
     <script type="text/javascript" src="../script.js"></script>
     <script type="text/javascript" src="../server.js"></script>
-    
+    <script type="text/javascript" src="script.js"></script>
 
 </body>
 </html>
