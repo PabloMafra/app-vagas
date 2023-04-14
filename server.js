@@ -151,7 +151,7 @@
 
 
 
-
+//funcionando
   const firebaseConfig = {
     apiKey: "AIzaSyDfSQex_8VL8GvNZnMchygRqhE0Zki9up8",
     authDomain: "vagas-garagem-bd78f.firebaseapp.com",
@@ -163,9 +163,16 @@
     measurementId: "G-KCN7NX1Y8V"
   };
 
+  
+
   firebase.initializeApp(firebaseConfig);
-  var firebaseRef = firebase.database().ref('usuarios/vaga');
   document.querySelector('#agendar').addEventListener('click', ()=>{
+
+    const vaga = document.getElementById('vaga').value;
+    var firebaseRef = firebase.database().ref(`usuarios/vaga${vaga}`);
+
+    
+
     const name = document.getElementById('name').value;
     const placa = document.getElementById('placa').value;
     const hour = document.getElementById('hour').value;
@@ -178,11 +185,19 @@
 
     firebaseRef.push(usuarios).then(()=>{
       console.log('Dados gravados com sucesso!');
+      firebaseRef.get().then(snapshot=>{
+        snapshot.docs.forEach(doc =>{
+          console.log(doc.data())
+        })
+      })
       // location.reload();
     }).catch((error)=>{
       console.error('Erro ao gravar dados: ', error);
     });
   });
+
+
+
 
 
 

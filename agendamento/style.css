@@ -52,128 +52,19 @@ header{
   height:60px;
   width: 100%;
 }
+
 .logo{
     display:flex;
     justify-content:center;
     padding:20px;
 }
 
-.fa-solid.fa-user, .fa-solid.fa-car, .fa-regular.fa-clock{
-  color:white;
-  
-}
-
-#checkbox {
-  display: none;
-}
-
-.toggle {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  transition-duration: .5s;
-  left:310px;
-  bottom:65px;
-}
-
-.bars {
-  width: 100%;
-  height: 4px;
-  background-color: #0A4182;
-  border-radius: 4px;
-}
-
-#bar2 {
-  transition-duration: .8s;
-  width:70%;
-}
-
-#bar1,#bar3 {
-  width: 70%;
-}
-
-#checkbox:checked + .toggle .bars {
-  position: absolute;
-  transition-duration: .5s;
-}
-
-#checkbox:checked + .toggle #bar2 {
-  transform: scaleX(0);
-  transition-duration: .5s;
-}
-
-#checkbox:checked + .toggle #bar1 {
-  width: 100%;
-  transform: rotate(45deg);
-  transition-duration: .5s;
-}
-
-#checkbox:checked + .toggle #bar3 {
-  width: 100%;
-  transform: rotate(-45deg);
-  transition-duration: .5s;
-}
-
-#checkbox:checked + .toggle {
-  transition-duration: .5s;
-  transform: rotate(180deg);
-}
-
-
 .hr-title{
-    margin-top:0px;
-    position: relative;
-    height: 2px;
-    background: #0A4182;
-    margin-bottom: 30px;
-}
-
-.ok{
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  bottom:130px;
-  width:90%;
-  height:450px;
-  border:2px solid white;
-  border-radius:15px;
+  margin-top:0px;
+  position: relative;
+  height: 2px;
   background: #0A4182;
-  z-index:2;
-}
-.message{
-  color:white;
-  font-family: 'Roboto', sans-serif;
-  margin-top:250px;
-  font-size:1.2rem;
-  padding:5px;
-}
-
-.fa-regular.fa-circle-check{
-  color:greenyellow;
-  position:absolute;
-  top:100px;
-  
-}
-
-.fa-solid.fa-warehouse{
-  position:fixed;
-  margin-left:220px;
-  margin-top:-17px;
-  /* bottom:526px; */
-  z-index: 1;
-  /* top:152px; */
-  color:#0A4182;
-}
-
-.divisao{
-  display:flex;
-  justify-content: center;
+  margin-bottom: 30px;
 }
 
 .container{
@@ -193,6 +84,38 @@ header{
   bottom:0;
 }
 
+
+.fa-solid.fa-user, .fa-solid.fa-car, .fa-solid.fa-clock{
+  color:white;
+  
+}
+
+.fa-location-dot:before{
+  padding:3px;
+}
+
+
+
+
+
+
+
+.fa-solid.fa-warehouse{
+  position:fixed;
+  margin-left:220px;
+  margin-top:-17px;
+  /* bottom:526px; */
+  /* z-index: 1; */
+  /* top:152px; */
+  color:#0A4182;
+}
+
+.divisao{ /*centralizar icone garagem*/
+  display:flex;
+  justify-content: center;
+}
+
+
 /* .menu-nav{
     width:100%;
     display:inline-flex;
@@ -204,7 +127,7 @@ header{
 } */
 
 #name{
-    width:80%;
+    width:76%;
     display: inline;
     padding:7px 0 6px 15px;
     height:30px;
@@ -212,7 +135,7 @@ header{
 }
 
 #placa{
-    width:79.2%;
+    width:75.99%;
     display: inline;
     padding:7px 0 6px 15px;
     height:30px;
@@ -221,10 +144,28 @@ header{
 }
 
 #hour{
-    width:85.6%;
+    width:82.6%;
     padding:8.25px 0 6.25px 2px;
     height:30px;
     border-radius: 10px;
+}
+
+#vaga{
+  width:75.99%;
+  padding:6.5px 0 5px 15px;
+  height:30px;
+  border-radius: 10px;
+}
+
+#bg{
+  display:flex;
+  justify-content: center;
+  position: absolute;
+  width:150%;
+  height:8000px;
+  background: rgba(0, 0, 0, 0.61);
+  margin-top:-100%;
+  z-index:1;
 }
 
 .label-icon{
@@ -238,18 +179,18 @@ header{
     margin-bottom:8px;
 }
 
+
+/*inputs*/
 .input-form{
-    /* position: relative; */
-    /* display:flex;
-    flex-direction: column; */
-    flex-wrap: wrap;
-    /* margin-left:15px; */
-    margin-top:30px;
-    /*padding:
-    margin-bottom: 30px; */
-    border-radius: 10px;
-
-
+  /* position: relative; */
+  /* display:flex;
+  flex-direction: column; */
+  flex-wrap: wrap;
+  /* margin-left:15px; */
+  margin-top:30px;
+  /*padding:
+  margin-bottom: 30px; */
+  border-radius: 10px;
 }
 
 .fa-solid.fa-user{
@@ -261,10 +202,50 @@ header{
     margin-left:3px;
 }
 
-.fa-regular.fa-clock{
+.fa-solid.fa-location-dot{
+  color:white; 
+}
+
+.fa-solid.fa-clock{
     margin-left:3px;
 }
 
+  /*pop-up*/
+#pop-up{
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom:130px;
+  width:90%;
+  height:450px;
+  border:2px solid white;
+  border-radius:15px;
+  background: #0A4182;
+  z-index:2;
+}
+
+.message{
+  color:white;
+  font-family: 'Roboto', sans-serif;
+  margin-top:250px;
+  font-size:1.2rem;
+  padding:5px;
+}
+
+.fa-regular.fa-circle-check{
+  color:greenyellow;
+  position:absolute;
+  top:100px;
+  
+}
+
+
+/*button reservar*/
+.center{
+  display: flex;
+  justify-content: center;
+  margin-top:50px;
+}
 
 .button {
     margin-bottom:30px;
@@ -289,112 +270,107 @@ header{
     font-weight: 600;
   }
   
-  .button .button__icon {
-    position: absolute;
-    transform: translateX(109px);
-    height: 100%;
-    width: 33px;
-    background-color: #0b4c9c;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius:8px;
-  }
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 33px;
+  background-color: #0b4c9c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:8px;
+}
   
-  .button .svg {
-    width: 30px;
-    stroke: #fff;
-  }
-  
-  .button:hover {
-    background: #0A4182;
-  }
-  
-  .button:hover .button__text {
-    color: transparent;
-  }
-  
-  .button:hover .button__icon {
-    width: 143px;
-    transform: translateX(0);
-  }
-  
-  .button:active .button__icon {
-    background-color: #0A4182;
-  }
-  
-  .button:active {
-    border: 1px solid #0A4182;
-  }
+.button .svg {
+  width: 30px;
+  stroke: #fff;
+}
 
-  .center{
-    display: flex;
-    justify-content: center;
-    margin-top:50px;
-  }
+.button:hover {
+  background: #0A4182;
+}
 
-  .cssbuttons-io-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: white;
-    color: #0a4182;
-    font-family: 'Roboto' sans-serif;
-    padding: 0.35em;
-    padding-left: 1.2em;
-    font-size: 17px;
-    font-weight: 500;
-    border-radius: 0.9em;
-    border: none;
-    letter-spacing: 0.05em;
-    box-shadow: inset 0 0 1.6em -0.6em #0a4182;
-    overflow: hidden;
-    position: fixed;
-    bottom: 170px;
-    height: 2.8em;
-    padding-right: 3.3em;
-    width:70%;
-    cursor:pointer;
-    /* margin-left:30%; */
-    /* margin-top:600px; */
-  }
-  
-  .cssbuttons-io-button .icon {
-    background: white;
-    margin-left: 1em;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 2.2em;
-    width: 2.2em;
-    border-radius: 0.7em;
-    box-shadow: 0.1em 0.1em 0.99em 0.1em #0a4182;
-    right: 0.3em;
-    transition: all 0.3s;
-  }
-  
-  .cssbuttons-io-button:hover .icon {
-    width: calc(100% - 0.6em);
-  }
-  
-  .cssbuttons-io-button .icon svg {
-    width: 1.1em;
-    transition: transform 0.3s;
-    color: #0a4182;
-  }
-  
-  .cssbuttons-io-button:hover .icon svg {
-    transform: translateX(0.1em);
-  }
-  
-  .cssbuttons-io-button:active .icon {
-    transform: scale(0.95);
-  }
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 143px;
+  transform: translateX(0);
+}
+
+.button:active .button__icon {
+  background-color: #0A4182;
+}
+
+.button:active {
+  border: 1px solid #0A4182;
+}
 
 
-  @media screen and (min-width:650px){
-    #hour{
-      padding:4px 2px 3px 3px;
-    }
+/*button pop-up*/
+.cssbuttons-io-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: #0a4182;
+  font-family: 'Roboto', sans-serif;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  box-shadow: inset 0 0 1.6em -0.6em #0a4182;
+  overflow: hidden;
+  position: fixed;
+  bottom: 167px;
+  height: 2.8em;
+  padding-right: 3.3em;
+  width:70%;
+  cursor:pointer;
+  /* margin-left:30%; */
+  /* margin-top:600px; */
+}
+  
+.cssbuttons-io-button .icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.99em 0.1em #0a4182;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #0a4182;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  transform: scale(0.95);
+}
+
+/* @media screen and (min-width:650px){
+  #hour{
+    padding:4px 2px 3px 3px;
   }
+} */

@@ -104,7 +104,6 @@ function chooseWhite(){
     green.style.display = "none";
     orange.style.display = "none";
     white.style.display = "block";
-    white.style.transition = "2"
 }
 
 
